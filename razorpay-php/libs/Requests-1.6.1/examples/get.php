@@ -7,10 +7,7 @@ include('../library/Requests.php');
 Requests::register_autoloader();
 
 // Now let's make a request!
-$options = array(
-	'auth' => array('someuser', 'password')
-);
-$request = Requests::get('http://httpbin.org/basic-auth/someuser/password', array(), $options);
+$request = Requests::get('http://httpbin.org/get', array('Accept' => 'application/json'));
 
 // Check what we received
 var_dump($request);
